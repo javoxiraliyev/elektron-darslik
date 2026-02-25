@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Tarmoqni dasturlash asoslari – Zamonaviy elektron darslik. 15 ta ma'ruza, 11 ta amaliy ish va 15 ta video dars bilan tarmoq dasturlashini o'rganing." />
+    <title>Tarmoqni Dasturlash Asoslari | Elektron Darslik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" onclick="showPage('home')">
+                <div class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <rect width="28" height="28" rx="8" fill="#F97316" />
+                        <path d="M6 14C6 14 8 8 14 8C20 8 22 14 22 14C22 14 20 20 14 20C8 20 6 14 6 14Z" stroke="white"
+                            stroke-width="2" fill="none" />
+                        <circle cx="14" cy="14" r="3" fill="white" />
+                        <circle cx="8" cy="14" r="1.5" fill="#F97316" />
+                        <circle cx="20" cy="14" r="1.5" fill="#F97316" />
+                        <line x1="9.5" y1="14" x2="11" y2="14" stroke="white" stroke-width="1.5" />
+                        <line x1="17" y1="14" x2="18.5" y2="14" stroke="white" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <span class="logo-text">TDA <span class="logo-accent">Darslik</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="nav-link active" id="nav-home" onclick="showPage('home')">Bosh sahifa</a></li>
+                <li><a href="#" class="nav-link" id="nav-materials" onclick="showPage('materials')">Materiallar</a></li>
+                <li><a href="#" class="nav-link" id="nav-videos" onclick="showPage('videos')">Videolar</a></li>
+                <li><a href="#" class="nav-link" id="nav-about" onclick="showPage('about')">Haqida</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menyu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE: HOME ===== -->
+    <section class="page active" id="page-home">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Elektron Darslik — 2024/2025</span>
+                </div>
+                <h1 class="hero-title">
+                    Tarmoqni dasturlash<br />
+                    <span class="hero-title-accent">asoslari</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Zamonaviy tarmoq texnologiyalari, protokollar va dasturlash<br />
+                    metodlarini o'rganish uchun to'liq elektron kurs
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="showPage('materials')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 3l14 9-14 9V3z" />
+                        </svg>
+                        O'rganishni boshlash
+                    </button>
+                    <button class="btn-secondary" onclick="showPage('videos')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="7" width="20" height="15" rx="2" />
+                            <path d="M16 3H8L2 7h20l-6-4z" />
+                        </svg>
+                        Video darslar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-section">
+            <div class="container">
+                <h2 class="section-title">Kurs tarkibi</h2>
+                <p class="section-subtitle">Barcha kerakli materiallar bir joyda jamlangan</p>
+                <div class="stats-grid">
+                    <div class="stat-card" onclick="showPage('materials')">
+                        <div class="stat-icon stat-icon-1">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                            </svg>
+                        </div>
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Ma'ruza</div>
+                        <div class="stat-desc">Nazariy bilimlar</div>
+                        <div class="stat-arrow">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="showPage('materials'); setTimeout(()=>switchTab('practical'),100)">
+                        <div class="stat-icon stat-icon-2">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </div>
+                        <div class="stat-number">11</div>
+                        <div class="stat-label">Amaliy ish</div>
+                        <div class="stat-desc">Mustaqil topshiriqlar</div>
+                        <div class="stat-arrow">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="showPage('videos')">
+                        <div class="stat-icon stat-icon-3">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                            </svg>
+                        </div>
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Video dars</div>
+                        <div class="stat-desc">Ko'rgazmali materiallar</div>
+                        <div class="stat-arrow">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section">
+            <div class="container">
+                <h2 class="section-title">Nima o'rganasiz?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <h3>TCP/IP Protokollari</h3>
+                        <p>Internet arxitekturasi va asosiy protokollarni chuqur o'rganish</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔌</div>
+                        <h3>Socket dasturlash</h3>
+                        <p>Tarmoq ilovalarini yaratish uchun socket API dan foydalanish</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Xavfsizlik asoslari</h3>
+                        <p>Tarmoq xavfsizligi va shifrlash texnologiyalari</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Asinxron dasturlash</h3>
+                        <p>Yuqori samarali tarmoq ilovalarini ishlab chiqish</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE: MATERIALS ===== -->
+    <section class="page" id="page-materials">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">O'quv Materiallar</h1>
+                    <p class="page-desc">Barcha nazariy ma'ruzalar va amaliy ishlar</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Tabs -->
+            <div class="tabs-wrapper">
+                <div class="tabs">
+                    <button class="tab-btn active" id="tab-theory" onclick="switchTab('theory')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                        </svg>
+                        Nazariy ma'ruzalar
+                        <span class="tab-badge">15</span>
+                    </button>
+                    <button class="tab-btn" id="tab-practical" onclick="switchTab('practical')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                        Amaliy ishlar
+                        <span class="tab-badge">11</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Theory Tab -->
+            <div class="tab-content active" id="content-theory">
+                <div class="materials-list" id="lectureList"></div>
+            </div>
+
+            <!-- Practical Tab -->
+            <div class="tab-content" id="content-practical">
+                <div class="materials-list" id="practicalList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE: VIDEOS ===== -->
+    <section class="page" id="page-videos">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Video Darslar</h1>
+                    <p class="page-desc">Ko'rgazmali video materiallar to'plami</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="video-grid" id="videoGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE: ABOUT ===== -->
+    <section class="page" id="page-about">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Kurs Haqida</h1>
+                    <p class="page-desc">Fan va muallif to'g'risida ma'lumot</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="about-grid">
+                <!-- Left: Course Info -->
+                <div class="about-left">
+                    <div class="about-card">
+                        <div class="about-card-icon">🎯</div>
+                        <h2 class="about-card-title">Kursning maqsadi</h2>
+                        <p class="about-card-text">
+                            "Tarmoqni dasturlash asoslari" kursi talabalar va dasturchilarni zamonaviy tarmoq
+                            texnologiyalari bilan tanishtirish va ularning amaliy ko'nikmalarini rivojlantirish
+                            maqsadida yaratilgan. Kurs Internet protokollari, ma'lumot uzatish usullari, socket
+                            dasturlash va xavfsiz tarmoq ilovalarini yaratish kabi muhim mavzularni qamrab oladi.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon">📡</div>
+                        <h2 class="about-card-title">Kursning ahamiyati</h2>
+                        <p class="about-card-text">
+                            Bugungi raqamli dunyoda tarmoq dasturlash bilimlari har qanday dasturchi uchun muhim. Ushbu
+                            kurs orqali siz real loyihalarda ishlatishingiz mumkin bo'lgan bilim va ko'nikmalar olasiz:
+                        </p>
+                        <ul class="about-list">
+                            <li><span class="list-icon">✅</span> TCP va UDP asosida ilovalar yaratish</li>
+                            <li><span class="list-icon">✅</span> HTTP/HTTPS protokollari bilan ishlash</li>
+                            <li><span class="list-icon">✅</span> Klient-server arxitekturasini tushunish</li>
+                            <li><span class="list-icon">✅</span> Asinxron va ko'p oqimli dasturlash</li>
+                            <li><span class="list-icon">✅</span> Tarmoq xavfsizligi asoslarini egallash</li>
+                            <li><span class="list-icon">✅</span> Haqiqiy loyihalar yaratish tajribasi</li>
+                        </ul>
+                    </div>
+                    <div class="about-card course-details-card">
+                        <div class="about-card-icon">📊</div>
+                        <h2 class="about-card-title">Kurs tafsilotlari</h2>
+                        <div class="course-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Daraja</span>
+                                <span class="detail-value badge-intermediate">O'rta daraja</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Ma'ruzalar</span>
+                                <span class="detail-value">15 ta</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Amaliy ishlar</span>
+                                <span class="detail-value">11 ta</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Video darslar</span>
+                                <span class="detail-value">15 ta</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Til</span>
+                                <span class="detail-value">O'zbek tili</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Author -->
+                <div class="about-right">
+                    <div class="author-card">
+                        <div class="author-avatar">
+                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="60" cy="60" r="60" fill="url(#avatarGrad)" />
+                                <circle cx="60" cy="45" r="22" fill="#BFDBFE" />
+                                <path d="M10 110 Q60 75 110 110" fill="#1E3A5F" opacity="0.8" />
+                                <defs>
+                                    <linearGradient id="avatarGrad" x1="0" y1="0" x2="120" y2="120">
+                                        <stop offset="0%" stop-color="#1E3A8A" />
+                                        <stop offset="100%" stop-color="#1E40AF" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="author-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h2 class="author-name">O'quv kursi muallifi</h2>
+                            <p class="author-title">Tarmoq texnologiyalari kafedrasining o'qituvchisi</p>
+                            <p class="author-university">Axborot texnologiyalari universiteti</p>
+                        </div>
+                        <div class="author-stats">
+                            <div class="author-stat">
+                                <strong>5+</strong>
+                                <span>Yil tajriba</span>
+                            </div>
+                            <div class="author-stat-divider"></div>
+                            <div class="author-stat">
+                                <strong>200+</strong>
+                                <span>Talabalar</span>
+                            </div>
+                            <div class="author-stat-divider"></div>
+                            <div class="author-stat">
+                                <strong>3</strong>
+                                <span>Kurslar</span>
+                            </div>
+                        </div>
+                        <p class="author-bio">
+                            Tarmoq dasturlash va kompyuter tarmoqlari sohasida keng tajribaga ega mutaxassis. Bir necha
+                            yildan beri oliy ta'lim muassasasida pedagogik faoliyat yuritib kelmoqda.
+                        </p>
+                        <div class="author-social">
+                            <h4 class="social-title">Bog'lanish</h4>
+                            <div class="social-links">
+                                <a href="https://t.me/" class="social-btn social-telegram" target="_blank"
+                                    rel="noopener">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.61c-.15.668-.543.832-1.097.517l-3.04-2.238-1.468 1.412c-.163.163-.298.298-.61.298l.217-3.086 5.61-5.067c.244-.217-.053-.337-.378-.12l-6.932 4.362-2.986-.934c-.65-.203-.663-.65.135-.96l11.657-4.497c.54-.196 1.013.12.932.703z" />
+                                    </svg>
+                                    Telegram
+                                </a>
+                                <a href="mailto:teacher@example.uz" class="social-btn social-email">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                    Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote Card -->
+                    <div class="quote-card">
+                        <div class="quote-icon">"</div>
+                        <p class="quote-text">Tarmoq dasturlashni o'rganish — bu raqamli dunyoning tili bilan gaplasha
+                            olish imkoniyati.</p>
+                        <div class="quote-author">— Kurs muallifi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div class="modal-overlay" id="videoModal" onclick="closeModal(event)">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Video dars</h3>
+                <button class="modal-close" onclick="closeVideoModal()" aria-label="Yopish">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="video-wrapper">
+                    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MATERIAL MODAL ===== -->
+    <div class="modal-overlay" id="materialModal" onclick="closeMaterialModal(event)">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="mTitle">Material</h3>
+                <button class="modal-close" onclick="hideMaterialModal()" aria-label="Yopish">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 40px 24px;">
+                <div class="m-content">
+                    <div class="m-icon-large" id="mIcon">📄</div>
+                    <h2 id="mHeading" style="margin-bottom: 12px; font-weight: 800;">Mavzu nomi</h2>
+                    <p id="mDesc" style="color: var(--navy-300); margin-bottom: 32px; line-height: 1.7;">Ushbu material
+                        o'quv dasturining muhim qismi bo'lib, batafsil ma'lumot olish uchun faylni yuklab oling.</p>
+                    <a href="#" id="mDownloadBtn" download class="btn-primary"
+                        style="width: 100%; justify-content: center;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        To'liq faylni yuklab olish
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                            <rect width="28" height="28" rx="8" fill="#F97316" />
+                            <circle cx="14" cy="14" r="5" stroke="white" stroke-width="2" fill="none" />
+                            <circle cx="14" cy="14" r="2" fill="white" />
+                        </svg>
+                    </div>
+                    <span>Tarmoqni Dasturlash Asoslari</span>
+                </div>
+                <p class="footer-text">© 2024–2025 Elektron Darslik. Barcha huquqlar himoyalangan.</p>
+                <div class="footer-links">
+                    <a href="#" onclick="showPage('home')">Bosh sahifa</a>
+                    <a href="#" onclick="showPage('materials')">Materiallar</a>
+                    <a href="#" onclick="showPage('videos')">Videolar</a>
+                    <a href="#" onclick="showPage('about')">Haqida</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
