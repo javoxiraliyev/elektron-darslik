@@ -265,7 +265,7 @@ function openVideoModal(videoId) {
   const title = document.getElementById('modalTitle');
 
   title.textContent = video.title;
-  frame.src = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
+  frame.src = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
