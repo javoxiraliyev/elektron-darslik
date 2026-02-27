@@ -1434,12 +1434,14 @@ img {
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
+    width: 100%;
   }
 
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -1453,7 +1455,23 @@ img {
   }
 
   .material-item {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .material-info {
+    width: 100%;
+  }
+
+  .material-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .material-actions .btn-read {
+    flex: 1;
+    justify-content: center;
   }
 
   .about-grid {
@@ -1468,6 +1486,7 @@ img {
 
   .modal-container {
     border-radius: var(--radius-lg);
+    margin: 10px;
   }
 
   .author-card {
