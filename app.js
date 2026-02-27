@@ -1,21 +1,19 @@
-// ===== DATA =====
-
 const lectures = [
-  { id: 1, title: "Kirish. Kompyuter tarmoqlari tarixi va klassifikatsiyasi", file: "materials/Maruza/1+.docx" },
-  { id: 2, title: "OSI va TCP/IP modellari. Tarmoq protokollari asoslari", file: "materials/Maruza/2+.docx" },
+  { id: 1, title: "Kirish. Kompyuter tarmoqlari tarixi va klassifikatsiyasi", file: "materials/Maruza/1+.docx", slide: "materials/Maruza prizintatsiya/1- Maruza.pptx" },
+  { id: 2, title: "OSI va TCP/IP modellari. Tarmoq protokollari asoslari", file: "materials/Maruza/2+.docx", slide: "materials/Maruza prizintatsiya/2- Maruza.pptx" },
   { id: 3, title: "Fizik va kanal qatlamlari. Ethernet texnologiyalari", file: "materials/Maruza/3+.doc" },
-  { id: 4, title: "IP manzillash. IPv4 va IPv6 protokollari", file: "materials/Maruza/4+.docx" },
-  { id: 5, title: "Yo'naltiruvchilar va marshrutlash algoritmlari", file: "materials/Maruza/5+.doc" },
-  { id: 6, title: "Transport qatlami. TCP va UDP protokollari", file: "materials/Maruza/6+.docx" },
-  { id: 7, title: "Socket dasturlash asoslari. API va interfeys", file: "materials/Maruza/7+.docx" },
-  { id: 8, title: "TCP Socket asosida klient-server ilovasi yaratish", file: "materials/Maruza/8+.docx" },
-  { id: 9, title: "UDP Socket va datagram asosida aloqa", file: "materials/Maruza/9+.docx" },
-  { id: 10, title: "Ko'p oqimli (Multithreading) tarmoq dasturlash", file: "materials/Maruza/10+.docx" },
-  { id: 11, title: "Asinxron I/O va Non-blocking socket dasturlash", file: "materials/Maruza/11+.docx" },
-  { id: 12, title: "HTTP va HTTPS protokollari. Web dasturlash asoslari", file: "materials/Maruza/12+.docx" },
-  { id: 13, title: "DNS, DHCP va boshqa yuqori qatlam protokollari", file: "materials/Maruza/13+.docx" },
-  { id: 14, title: "Tarmoq xavfsizligi: shifrlash va autentifikatsiya", file: "materials/Maruza/14+.docx" },
-  { id: 15, title: "Zamonaviy tarmoq arxitekturalari: bulut va IoT", file: "materials/Maruza/15+.docx" },
+  { id: 4, title: "IP manzillash. IPv4 va IPv6 protokollari", file: "materials/Maruza/4+.docx", slide: "materials/Maruza prizintatsiya/4- Maruza.pptx" },
+  { id: 5, title: "Yo'naltiruvchilar va marshrutlash algoritmlari", file: "materials/Maruza/5+.doc", slide: "materials/Maruza prizintatsiya/5- Maruza.pptx" },
+  { id: 6, title: "Transport qatlami. TCP va UDP protokollari", file: "materials/Maruza/6+.docx", slide: "materials/Maruza prizintatsiya/6- Maruza.pptx" },
+  { id: 7, title: "Socket dasturlash asoslari. API va interfeys", file: "materials/Maruza/7+.docx", slide: "materials/Maruza prizintatsiya/7- Maruza.pptx" },
+  { id: 8, title: "TCP Socket asosida klient-server ilovasi yaratish", file: "materials/Maruza/8+.docx", slide: "materials/Maruza prizintatsiya/8- Maruza.pptx" },
+  { id: 9, title: "UDP Socket va datagram asosida aloqa", file: "materials/Maruza/9+.docx", slide: "materials/Maruza prizintatsiya/9- Maruza.pptx" },
+  { id: 10, title: "Ko'p oqimli (Multithreading) tarmoq dasturlash", file: "materials/Maruza/10+.docx", slide: "materials/Maruza prizintatsiya/10- Maruza.pptx" },
+  { id: 11, title: "Asinxron I/O va Non-blocking socket dasturlash", file: "materials/Maruza/11+.docx", slide: "materials/Maruza prizintatsiya/11- Maruza.pptx" },
+  { id: 12, title: "HTTP va HTTPS protokollari. Web dasturlash asoslari", file: "materials/Maruza/12+.docx", slide: "materials/Maruza prizintatsiya/12- Maruza.pptx" },
+  { id: 13, title: "DNS, DHCP va boshqa yuqori qatlam protokollari", file: "materials/Maruza/13+.docx", slide: "materials/Maruza prizintatsiya/13- Maruza.pptx" },
+  { id: 14, title: "Tarmoq xavfsizligi: shifrlash va autentifikatsiya", file: "materials/Maruza/14+.docx", slide: "materials/Maruza prizintatsiya/14- Maruza.pptx" },
+  { id: 15, title: "Zamonaviy tarmoq arxitekturalari: bulut va IoT", file: "materials/Maruza/15+.docx", slide: "materials/Maruza prizintatsiya/15- Maruza.pptx" },
 ];
 
 const practicals = [
@@ -120,22 +118,31 @@ function renderLectures() {
       <div class="material-num">${String(lec.id).padStart(2, '0')}</div>
       <div class="material-info">
         <div class="material-title">${lec.title}</div>
-        <div class="material-meta">Ma'ruza · DOCX fayl</div>
+        <div class="material-meta">Ma'ruza · DOCX fayl${lec.slide ? ' · PPTX fayl' : ''}</div>
       </div>
       <div class="material-actions">
         <button onclick="openMaterialModal('lecture', ${lec.id})" class="btn-read" title="${lec.title}ni ko'rish">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M1: 12h14M12 5l7 7-7 7"/>
+            <path d="M1 12h14M12 5l7 7-7 7"/>
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 8v4l3 3"/>
           </svg>
           O'qish
         </button>
-        <a href="${lec.file}" download class="btn-download-small" title="Faylni yuklab olish">
+        <a href="${lec.file}" download class="btn-download-small" title="Matnni yuklab olish">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
           </svg>
         </a>
+        ${lec.slide ? `
+        <a href="${lec.slide}" download class="btn-download-small" title="Slaytni yuklab olish" style="background:var(--blue-500); color:white; border-color:var(--blue-500);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </a>
+        ` : ''}
       </div>
     </div>
   `).join('');
